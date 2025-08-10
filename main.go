@@ -5,6 +5,13 @@ import (
 	"net/http"
 )
 
+type Produto struct {
+	Nome       string
+	Descricao  string
+	Preco      float64
+	Quantidade int
+}
+
 var temp = template.Must(template.ParseGlob("templates/*.html")) // Encapsula todos os templates e retorna dois valores o template e o erro, template.ParseGlob() caminho de onde estão os templates, "templates/*.index.html", *.html, pega todos os arquivos em html
 
 func main() {
