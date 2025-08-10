@@ -22,6 +22,10 @@ func main() {
 }
 
 func index(w http.ResponseWriter, r *http.Request) { // (Mostrar a resposta, apontando para o requerimento) Estrutura padrão
-	temp.ExecuteTemplate(w, "Index", nil) //(Quem consegue escrever, quem ele vai exibir, quer passar alguma informação)
+	produtos := []Produto{
+		{"Camiseta", "Azul", 25, 2},
+		{"Notebook", "O melhor do mercado", 2500, 1},
+	}
+	temp.ExecuteTemplate(w, "Index", produtos) //(Quem consegue escrever, quem ele vai exibir, quer passar alguma informação)
 
 }
